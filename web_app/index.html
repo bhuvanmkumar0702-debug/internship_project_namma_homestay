@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namma HomeStay Pro - Official Website</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background-color: #f4f4f4; color: #333; }
+        header { background-color: #F4511E; color: white; padding: 2rem; text-align: center; }
+        .app-banner { background-color: #fff3e0; border: 1px solid #ffe0b2; padding: 1rem; text-align: center; font-weight: bold; }
+        .download-btn { background-color: #2196F3; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 10px; }
+        .container { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
+        .property-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
+        .card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .card img { width: 100%; height: 200px; object-fit: cover; }
+        .card-content { padding: 1.5rem; }
+        .price { color: #2E7D32; font-size: 1.2rem; font-weight: bold; }
+        footer { text-align: center; padding: 2rem; color: #777; }
+    </style>
+</head>
+<body>
+
+<div class="app-banner">
+    ⚠️ For a more secure and private experience, use our Android Application.
+    <br>
+    <a href="https://drive.google.com/file/d/1lGCKXGNrBTyfPYkqgETWxypQZ0C7Xlds/view?usp=drive_link" class="download-btn">Download Namma HomeStay Pro (.apk)</a>
+</div>
+
+<header>
+    <h1>Namma HomeStay (Hospitality)</h1>
+    <p>Discover the beauty of Karnataka's local stays</p>
+</header>
+
+<div class="container">
+    <h2>Available HomeStays</h2>
+    <div id="property-list" class="property-grid">
+        <!-- Properties will be loaded here via JavaScript -->
+        <p>Connecting to database...</p>
+    </div>
+</div>
+
+<footer>
+    &copy; 2026 Namma HomeStay Pro. All rights reserved.
+</footer>
+
+<!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+
+<script>
+    // Paste your Firebase Config from the Project Settings (Web App) here
+    const firebaseConfig = {
+        apiKey: "AIzaSyBiAes0qITg6iYC4XtlO2EQr-pLEFoR-Bc", // From your google-services.json
+        authDomain: "studio-5273689181-5a1c2.firebaseapp.com",
+        projectId: "studio-5273689181-5a1c2",
+        storageBucket: "studio-5273689181-5a1c2.firebasestorage.app",
+        messagingSenderId: "448701675031",
+        appId: "1:448701675031:android:df673b09b19595d7b20e52"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    const listDiv = document.getElementById('property-list');
+
+    db.collection("properties").onSnapshot((querySnapshot) => {
+        listDiv.innerHTML = "";
+        querySnapshot.forEach((doc) => {
+            const property = doc.data();
+            listDiv.innerHTML += `
+                <div class="card">
+                    <img src="${property.image}" alt="${property.name}">
+                    <div class="card-content">
+                        <h3>${property.name}</h3>
+                        <p>${property.location}</p>
+                        <p>${property.isAc ? "A/C" : "Non A/C"} | Max ${property.capacity} people</p>
+                        <p class="price">₹${property.price} / night</p>
+                        <button onclick="alert('Please use the Android App to book for full security.')" style="width: 100%; padding: 10px; background: #F4511E; border: none; color: white; border-radius: 5px; cursor: pointer;">Book on App</button>
+                    </div>
+                </div>
+            `;
+        });
+    });
+</script>
+
+</body>
+</html>

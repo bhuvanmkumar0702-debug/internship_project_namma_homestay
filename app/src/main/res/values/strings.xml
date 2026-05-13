@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Namma HomeStay Pro</string>
+    <!-- Replace this with your actual Web Client ID from Firebase Console -->
+    <string name="default_web_client_id">448701675031-drjrm8clui7ccti32oadljp75que3jlj.apps.googleusercontent.com</string>
+</resources>

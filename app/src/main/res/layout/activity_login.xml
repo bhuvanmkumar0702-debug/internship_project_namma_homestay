@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/ic_app_logo"
+        android:layout_marginBottom="32dp"
+        android:contentDescription="App Logo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Namma HomeStay"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#F4511E"
+        android:layout_marginBottom="40dp"/>
+
+    <EditText
+        android:id="@+id/emailEt"
+        android:hint="Email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"/>
+
+    <EditText
+        android:id="@+id/passwordEt"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/loginBtn"
+        android:text="Login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <ImageButton
+        android:id="@+id/fingerprintLoginBtn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@android:drawable/ic_lock_idle_lock"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:layout_marginTop="16dp"
+        android:contentDescription="Fingerprint Login"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/signupText"
+        android:text="Create Account"
+        android:textSize="16sp"
+        android:padding="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/forgotPasswordTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forgot Password?"
+        android:textColor="#2196F3"
+        android:textSize="14sp"
+        android:padding="10dp"
+        android:layout_marginTop="8dp"/>
+
+</LinearLayout>

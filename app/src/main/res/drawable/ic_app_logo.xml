@@ -1,0 +1,50 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="512dp"
+    android:height="512dp"
+    android:viewportWidth="512"
+    android:viewportHeight="512">
+
+    <!-- Background Gradient Circle -->
+    <path
+        android:pathData="M256,512C397.385,512 512,397.385 512,256C512,114.615 397.385,0 256,0C114.615,0 0,114.615 0,256C0,397.385 114.615,512 256,512Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="256"
+                android:startY="0"
+                android:endX="256"
+                android:endY="512"
+                android:type="linear">
+                <item android:offset="0" android:color="#FF7043"/>
+                <item android:offset="1" android:color="#F4511E"/>
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Stylized Modern House (White) -->
+    <path
+        android:pathData="M380,260 L256,150 L132,260 L132,380 L210,380 L210,300 L302,300 L302,380 L380,380 Z"
+        android:fillColor="#FFFFFF"/>
+
+    <!-- Roof Accent -->
+    <path
+        android:pathData="M395,250 L256,130 L117,250"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="15"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"/>
+
+    <!-- "N" for Namma Integrated into the House -->
+    <path
+        android:pathData="M230,340 L230,220 L282,340 L282,220"
+        android:strokeColor="#F4511E"
+        android:strokeWidth="8"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"/>
+
+    <!-- Heart of Hospitality -->
+    <path
+        android:pathData="M256,185c-10,-10 -25,-5 -25,10c0,10 25,25 25,25s25,-15 25,-25c0,-15 -15,-20 -25,-10"
+        android:fillColor="#FFEB3B"/>
+
+</vector>

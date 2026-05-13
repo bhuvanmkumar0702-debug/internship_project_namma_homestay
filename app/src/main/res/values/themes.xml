@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Namma_HomeStay" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">#FF5722</item>
+        <item name="colorSecondary">#2196F3</item>
+        <item name="android:navigationBarColor">#FFFFFF</item>
+    </style>
+</resources>

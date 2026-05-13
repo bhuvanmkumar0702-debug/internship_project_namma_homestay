@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/appLogo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_app_logo"
+            android:layout_centerVertical="true"
+            android:contentDescription="Namma HomeStay Logo" />
+
+        <TextView
+            android:text="Namma HomeStay Pro"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_toEndOf="@id/appLogo"
+            android:layout_marginStart="12dp"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#F4511E"/>
+
+        <ImageButton
+            android:id="@+id/settingsBtn"
+            android:src="@android:drawable/ic_menu_manage"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_alignParentEnd="true"
+            android:padding="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="Settings" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/aiSuggestionTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="AI Suggestion: Looking for the best stays..."
+        android:padding="12dp"
+        android:layout_margin="8dp"
+        android:background="#E3F2FD"
+        android:textColor="#1976D2"
+        android:textSize="14sp"
+        android:textStyle="italic" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/addPropertyFab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:layout_margin="16dp"
+            android:src="@android:drawable/ic_input_add"
+            android:contentDescription="Add Property" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/assistantFab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|bottom"
+            android:layout_margin="16dp"
+            android:src="@drawable/ic_ai_assistant"
+            app:backgroundTint="#2196F3"
+            android:contentDescription="AI Assistant" />
+
+    </FrameLayout>
+
+</LinearLayout>
